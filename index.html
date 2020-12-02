@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-  <div id="div"><h1 class="text-primary">Weather App</h1></div>
-    
+  </head>
+  <body>
+    <div id="div"><h1 class="text-primary">Weather App</h1></div>
+
+    <div class="text-center">
+      <form id="form" class="form-group">
+        <input type="text" placeholder="Search for a city name" />
+        <!-- <div class="text-center"> -->
+          <div class="form-check ">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="imperial"
+              name="temperature"
+              value="imperial"
+              checked
+            />
+            <label class="form-check-label" for="imperial"> Fahrenheit </label>
+          </div>
+          <div class="form-check ">
+            <input
+              class="form-check-input"
+              name="temperature"
+              type="radio"
+              id="metric"
+              value="metric"
+            />
+            <label class="form-check-label" for="metric"> Celcius </label>
+          </div>
+        <!-- </div> -->
+        <button type="button" id="submit-btn" class="btn btn-primary">
+          Search weather
+        </button>
+      </form>
+    </div>
+
     <script src="main.js"></script>
-</body>
+  </body>
+</html>
