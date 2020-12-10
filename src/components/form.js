@@ -1,2 +1,0 @@
-import { weatherInfo } from "./api";
-
