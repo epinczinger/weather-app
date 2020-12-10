@@ -1,21 +1,38 @@
 import './style/style.scss';
+import { weatherInfo, infoAPI} from './components/api';
 
 
 const div = document.getElementById('div');
 const p = document.createElement('p');
-p.textContent = 'Hola';
+p.textContent = '???';
 
 div.appendChild(p);
 
-async function search(city, units='metric') {
-    let response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=f8584d3f19d9882aec61e1e892543fe7`
-    )
-    if (response.status == 200) {
-      let json = await response.json();
-      return json.main.temp;
-    }
-    throw new Error(response.status);
-};
 
-console.log(search('santa teresita', 'imperial'));
+const btn = document.getElementById('submit-btn');
+    btn.addEventListener('click', (event) => {
+      processForm();
+});
+
+const processForm = () => {
+        const city = document.getElementById('input-city').value;
+        const radios = document.getElementsByClassName("form-check-input");
+        let unit = ''
+        
+        for (let i = 0; i < radios.length; i++) {
+            if (radios[i].checked) {
+                unit = radios[i].value;
+            };
+
+    console.log(weatherInfo(city, unit));
+            };
+          };
+ 
+//        async const infoArray = await weatherInfo(city, unit);
+
+//        console.log(infoArray);
+//         city = '';
+//         radios= '';
+//         unit='';
+
+//     });
