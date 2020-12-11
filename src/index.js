@@ -21,9 +21,14 @@ async function processForm() {
       unit = radios[i].value;
     }
   }
-  const results = await weatherInfo(city, unit);
 
-  showResults(results);
+  try {
+    const results = await weatherInfo(city, unit);
+
+    showResults(results);
+  } catch (error) {
+    alert(`${error}. Please, try with a different city`);
+  }
 }
 
 const btn = document.getElementById('submit-btn');
