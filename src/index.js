@@ -1,15 +1,14 @@
 import './style/style.scss';
 import { weatherInfo } from './components/api';
 
-  const searchResults = document.getElementById("search-results");
-  const resultContainer = document.getElementById("results-container");
+const searchResults = document.getElementById('search-results');
+const resultContainer = document.getElementById('results-container');
 
 const showResults = (obj) => {
   resultContainer.innerHTML = `<div><b>City: </b>${obj.city}, ${obj.country}</div>
   <div><b>Weather: </b>${obj.weather}</div>
   <div><b>Temperature: </b>${obj.temperature} degrees</div>`;
   searchResults.appendChild(resultContainer);
-
 };
 
 async function processForm() {
@@ -29,12 +28,10 @@ async function processForm() {
 
 const btn = document.getElementById('submit-btn');
 btn.addEventListener('click', () => {
-
-  if (resultContainer.innerHTML == '') {
+  if (resultContainer.innerHTML === '') {
     processForm();
   } else {
     resultContainer.innerHTML = '';
     processForm();
   }
-
 });
