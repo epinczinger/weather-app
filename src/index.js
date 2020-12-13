@@ -3,8 +3,12 @@ import { weatherInfo } from './components/api';
 
 const searchResults = document.getElementById('search-results');
 const resultContainer = document.getElementById('results-container');
+const main = document.getElementById('main');
+main.classList.add('w-50', 'm-auto');
+main.style.backgroundSize = "cover";
 
 const showResults = (obj) => {
+  main.style.backgroundImage = `url('https://source.unsplash.com/1200x600/?weather+${obj.weather};`;
   resultContainer.innerHTML = `<div><b>City: </b>${obj.city}, ${obj.country}</div>
   <div><b>Weather: </b>${obj.weather}</div>
   <div><b>Temperature: </b>${obj.temperature} degrees</div>`;

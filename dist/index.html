@@ -7,14 +7,19 @@
   </head>
   <body>
     <div id="div"><h1 class="text-primary text-center">Weather App</h1></div>
-    <div id="search-results">
-      <div class='text-center card my-2' id="results-container"></div>
-    </div>
-    <div class="text-center">
-      <form id="form" class="form-group">
-        <input type="text" id="input-city" placeholder="Search for a city name" />
-        <!-- <div class="text-center"> -->
-          <div class="form-check ">
+    <div id="main">
+      <div id="search-results">
+        <div class="text-center card my-2" id="results-container"></div>
+      </div>
+      <div class="text-center min-vh-50">
+        <form id="form" class="form-group">
+          <input
+            type="text"
+            id="input-city"
+            placeholder="Search for a city name"
+          />
+          <!-- <div class="text-center"> -->
+          <div class="form-check">
             <input
               class="form-check-input"
               type="radio"
@@ -25,7 +30,7 @@
             />
             <label class="form-check-label" for="imperial"> Fahrenheit </label>
           </div>
-          <div class="form-check ">
+          <div class="form-check">
             <input
               class="form-check-input"
               name="temperature"
@@ -35,13 +40,13 @@
             />
             <label class="form-check-label" for="metric"> Celcius </label>
           </div>
-        <!-- </div> -->
-        <button type="button" id="submit-btn" class="btn btn-primary">
-          Search weather
-        </button>
-      </form>
+          <!-- </div> -->
+          <button type="button" id="submit-btn" class="btn btn-primary">
+            Search weather
+          </button>
+        </form>
+      </div>
     </div>
-
     <script src="main.js"></script>
   </body>
 </html>
