@@ -5,7 +5,7 @@ const searchResults = document.getElementById('search-results');
 const resultContainer = document.getElementById('results-container');
 const main = document.getElementById('main');
 main.classList.add('w-50', 'm-auto');
-main.style.backgroundSize = "cover";
+main.style.backgroundSize = 'cover';
 
 const showResults = (obj) => {
   main.style.backgroundImage = `url('https://source.unsplash.com/1200x600/?weather+${obj.weather};`;
