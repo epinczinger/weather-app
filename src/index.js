@@ -31,7 +31,7 @@ async function processForm() {
 
     showResults(results);
   } catch (error) {
-    alert(`${error}. Please, try with a different city`);
+    alert('Please, try with a different city');
   }
 }
 

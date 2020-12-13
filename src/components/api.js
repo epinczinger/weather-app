@@ -3,11 +3,12 @@ const infoAPI = async (city, units = 'metric') => {
   const response = await fetch(
     `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`,
   );
-  if (response.status === 200) {
+  try {
     const info = await response.json();
     return info;
+  } catch (error) {
+    return alert(error);
   }
-  throw new Error(response.status);
 };
 
 const weatherInfo = async (city, units) => {
