@@ -18,7 +18,8 @@ const weatherInfo = async (city, units) => {
     city: result.name,
     country: result.sys.country,
     weather: result.weather[0].main,
-    temperature: result.main.temp,
+    temperatureC: result.main.temp,
+    temperatureF: Math.round(result.main.temp * (9 / 5)) + 32,
   };
   return filteredInfo;
 };

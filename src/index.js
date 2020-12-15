@@ -9,11 +9,38 @@ body.classList.add('w-50', 'm-auto');
 body.style.backgroundSize = 'cover';
 body.style.backgroundRepeat = 'no-repeat';
 
-const showResults = (obj) => {
+const showResults = (obj, temp) => {
+  let temperature;
+  if (temp === 'metric') {
+    temperature = `${obj.temperatureC} C`;
+  } else {
+    temperature = `${obj.temperatureF} F`;
+  }
   body.style.backgroundImage = `url('https://source.unsplash.com/1200x900/?weather+${obj.weather};`;
-  resultContainer.innerHTML = `<div><b>City: </b>${obj.city}, ${obj.country}</div>
-  <div><b>Weather: </b>${obj.weather}</div>
-  <div><b>Temperature: </b>${obj.temperature} degrees</div>`;
+  resultContainer.innerHTML = `<div><b>City: </b><span  class='text-primary'>${obj.city}, ${obj.country}</span></div>
+  <div><b>Weather: </b><span  class='text-primary'>${obj.weather}</span></div>
+  <div id='temp'><b>Temperature: </b><span id='temp' class='text-primary'>${temperature}</span></div>
+  `;
+
+  const tempBtn = document.createElement('button');
+  tempBtn.classList.add('btn', 'btn-primary');
+  tempBtn.innerText = 'Change to Celcius/Fahrenheit';
+
+  tempBtn.addEventListener('click', () => {
+    if ((temperature === obj.temperatureC)) {
+      temperature = obj.temperatureF;
+      document.getElementById('temp').innerHTML = `<b>Temperature: </b><span id='temp' class='text-primary'>${temperature} F </span>`;
+    } else {
+      temperature = obj.temperatureC;
+
+      document.getElementById(
+        'temp',
+      ).innerHTML = `<b>Temperature: </b><span id='temp' class='text-primary'>${temperature} C </span>`;
+    }
+  });
+
+  resultContainer.appendChild(tempBtn);
+
   searchResults.appendChild(resultContainer);
 };
 
@@ -31,7 +58,7 @@ async function processForm() {
   try {
     const results = await weatherInfo(city, unit);
 
-    showResults(results);
+    showResults(results, unit);
   } catch (error) {
     alert('Please, try with a different city');
   }
