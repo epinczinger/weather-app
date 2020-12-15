@@ -4,12 +4,15 @@
 
 ![screenshot](./screenshot.png)
 
+![screenshot](./screenshot2.png)
+
 The main goal of this project is to show the understanding about asynchronous communication with promises or async/await and when to use them.
 
 
 ## Live Link
 
 Have a look at the [Live Link](https://raw.githack.com/epinczinger/weather-app/feature/interface/dist/index.html)
+Have in mind some images(for instance background images) may not load properly on raw.githack.
 
 ## Built With
 

@@ -5,7 +5,7 @@ const searchResults = document.getElementById('search-results');
 const resultContainer = document.getElementById('results-container');
 const body = document.getElementById('body');
 
-body.classList.add('w-50', 'm-auto');
+body.classList.add('col-sm-12', 'col-md-7', 'col-lg-5', 'm-auto');
 body.style.backgroundSize = 'cover';
 body.style.backgroundRepeat = 'no-repeat';
 
