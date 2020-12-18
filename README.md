@@ -11,7 +11,7 @@ The main goal of this project is to show the understanding about asynchronous co
 
 ## Live Link
 
-Have a look at the [Live Link](https://raw.githack.com/epinczinger/weather-app/feature/interface/dist/index.html)
+Have a look at the [Live Link](https://raw.githack.com/epinczinger/weather-app/development/dist/index.html)
 Have in mind some images(for instance background images) may not load properly on raw.githack.
 
 ## Built With
