@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-replace-svg="nest"></script>
+    <title>Weather App</title>
+  </head>
+  <body id='body'>
+    <div class="mt-3" id="div">
+      <h1 class="text-primary text-center"><i class="fas fa-cloud-sun-rain"></i> Windust</h1>
+    <p class="text-secondary text-center">a weather app by Esteban Pinczinger</p></div>
+    <div id="main">
+      <div id="search-results">
+        <div class="text-center card my-2 bg-light" id="results-container"></div>
+      </div>
+      <div class="text-center bg-light rounded border border-light col-8 m-auto">
+        <form id="form" class="form-group pt-3">
+          <input
+            type="text"
+            id="input-city"
+            placeholder="Search for a city name"
+          />
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="imperial"
+              name="temperature"
+              value="imperial"
+              checked
+            />
+            <label class="form-check-label font-weight-bold" for="imperial"> Fahrenheit </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              name="temperature"
+              type="radio"
+              id="metric"
+              value="metric"
+            />
+            <label class="form-check-label font-weight-bold" for="metric"> Celcius </label>
+          </div>
+          <button type="button" id="submit-btn" class="btn btn-primary">
+            Search weather
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
